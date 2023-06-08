@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:moviebase_clone/core/shared_pref_utils.dart';
 import 'package:moviebase_clone/modules/home/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefUtils.initSharedPref();
+  await SharedPrefUtils.setDefaultAppLanguage();
+  await SharedPrefUtils.setDefaultAppThemeMode();
   runApp(const MyApp());
 }
 
